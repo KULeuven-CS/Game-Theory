@@ -1,0 +1,294 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\begin{question}
+    Exercise 2-1: Order of strategy removal.
+    Consider the following game:
+    
+    \begin{center}
+	    \begin{tabular}{|l|c|r|}
+	    \hline
+	    & Left & Right \\
+	    \hline
+	    Top & (1,1) & (0,1) \\
+	    \hline
+	    Middle & (1,2) & (2,1) \\
+	    \hline
+	    Bottom & (0,0) & (2,1) \\
+	    \hline
+	    \end{tabular}
+    \end{center}
+    
+    \begin{enumerate}
+    	\item Find all pure strategy Nash equilibria (PSNE) in the above normal form matrix.
+    	\item List all strategies that are weakly dominated by another strategy.
+    	\item In this game, can a different order of removal lead to different outcomes?
+    	\item List all pure strategy profiles that are not PSNE of the full game but become PSNE after iterative removal of weakly dominated strategies.
+    	\item List all pure strategy profiles that are PSNE of the full game but can never be PSNE after iterative removal of weakly dominated strategies, regardless of order.
+    \end{enumerate}
+   
+\end{question}
+
+\begin{solution} 
+
+    \begin{enumerate}
+    	\item 
+    		\begin{itemize}
+	    		\item Top-Left: (1,1)
+	    		\item Middle-Left (1,2)
+	    		\item Bottom-Right (2,1)
+    		\end{itemize}
+    	\item
+    		All strategies on the Top and bottom rows are weakly dominated.
+    	\item ontbreekt %TODO missing
+    	\item ontbreekt %TODO missing
+    	\item ontbreekt %TODO missing
+    \end{enumerate}
+\end{solution}
+
+\begin{question}
+Consider an arbitrary two-player normal form game $G = ({1,2},{A_1,A_2},{u_1,u_2})$. Let $i \in N$ and her maximin be $w_i$ and minimax value be $v_i$. Prove that $v_i \geq w_i$.
+\end{question}
+
+\begin{solution}
+ To Prove : $v_i \geq w_i$.\\
+ $w_i = u_i(s_{i}^{*},s_{-i}^{*})$
+ $v_i = \min\limits_{s_{-i}} \max\limits_{s_i} u_i(s_i,s_{-i})$\\
+ 	Where $\max_{s_i} u_i(s_i,s_{-i})\\ \geq
+ 	u_i(s_i^{*}, s_{-i}) = u_i(s_i^{*},s_{-i}^{*}) = w_i$
+\end{solution}
+
+\begin{question}
+Exercise 2-3 Beer Sales at Football Stadium.
+
+There are five collinear seating sections located along the lower level of one end of a football stadium, designated sections 101 through 105. Two vendors, Butt and Stella, each have obtained a license to sell beer from a fixed location in a seating section of their choice. The vendors can be located in the same or different sections. There are 250 fans in each section, and each fan will purchase a single beer from the beer stand that is closest to his or her section (they will not buy beer from the other stand). If the two beer stands are
+equidistant from a seating section, then half the fans in that section will purchase form one stand and half from the other. Each beer sold results in a profit of \$1.
+
+	\begin{enumerate}
+		\item Construct a normal form matrix with associated payoffs.
+		\item What strategies survive iterated removal of strictly dominated strategies?
+		\item What if it is not possible for either vendor to set up shop in section 103?
+		\item Do the answers to (1) or (2) change if each vendor must pay a licence fee of \$250?
+		\item Do the answers to (1) or (2) change if each vendor must pay a licence fee of \$250 for sections 101 and 105, \$350 for sections 102 and 104 and \$450 for section 103? If so, how?
+	\end{enumerate}
+
+\end{question}
+
+
+
+\begin{solution}
+
+	
+	\begin{enumerate}
+		\item 
+			\begin{tabular}{|l|c|c|c|c|r|}
+				\hline
+				Butt/Stella & 101 & 102 & 103 & 104 & 105\\
+				\hline
+				101 & (625,625) & (250,1000) & (375,875) & (500,750) & (625,625)\\
+				\hline
+				102 & (1000,250) & (625, 625) & (500,750) & (625,625) & (750,500)\\
+				\hline
+				103 & (875,375) & (750,500) & \cellcolor{yellow!25}(625,625) & (750,500) & (875,375)\\
+				\hline 
+				104 & (750,500) & (625,625) & (500,750) & (625,625) & (1000,250)\\
+				\hline
+				105 & (625,625) & (500,750) & (375,875) & (250,1000) & (625,625)\\
+				\hline
+			\end{tabular}
+		\item Only 103-103: (625,625)
+		\item 
+			\begin{tabular}{|l|c|c|c|r|}
+				\hline
+				Butt/Stella & 101 & 102 & 104 & 105\\
+				\hline
+				101 & (625,625) & (250,1000) & (500,750) & (625,625)\\
+				\hline
+				102 & (1000,250) & \cellcolor{yellow!25}(625, 625) & \cellcolor{yellow!25}(625,625) & (750,500)\\
+				\hline 
+				104 & (750,500) & \cellcolor{yellow!25}(625,625) & \cellcolor{yellow!25}(625,625) & (1000,250)\\
+				\hline
+				105 & (625,625) & (500,750) & (250,1000) & (625,625)\\
+				\hline
+			\end{tabular}
+		\item No.
+		\item Yes, table changes, equilibrium found in 103-103: (175,175)
+			
+	\end{enumerate}
+\end{solution}
+
+\begin{question}
+	Minimax.\\
+	Consider the following two games. Suppose that player 2 does not really care about her own payoff, but instead wants to minimise the payoff of player 1 (i.e. she plays her minimax strategy). Player 1 wants to maximise her minimum payoff (i.e. she plays her maximin strategy).
+	
+	\begin{center}
+	\begin{tabular}{|l|c|c|r|}
+	    \hline
+	    & Left & Front & Right \\
+	    \hline
+	    Top & (8,-8) & (7,-7) & (3,-3) \\
+	    \hline
+	    Middle & (5,-5) & (9,-9) & (4,-4) \\
+	    \hline
+	    Bottom & (1,-1) & (6,-6) & (2,-2) \\
+	    \hline
+	\end{tabular}
+	\quad
+	\begin{tabular}{|l|c|c|r|}
+	    \hline
+	    & Left & Front & Right \\
+	    \hline
+	    Top & (8,-8) & (7,-7) & (3,-3) \\
+	    \hline
+	    Middle & \textbf{(4,-4)} & (9,-9) & \textbf{(5,-5)} \\
+	    \hline
+	    Bottom & (1,-1) & (6,-6) & (2,-2) \\
+	    \hline
+	\end{tabular}
+	\end{center}
+	
+	\begin{enumerate}
+		\item Which of the above matrices has a solution in pure strategies? What is the safety level of player 1 in this game?
+		\item The other matrix has a solution in mixed strategies. What is it? What is the safety level of player 1 in this game?
+		\item Both of these 3 $\times$ 3 matrices map different action profiles to different payoffs in the set $\{1, ... ,9\}$.
+		Let G be the set of all such games. What is the largest maximin value achieved by player 1 for any
+		game in G? What is the smallest? Give two matrices for which these maximin values are achieved.
+	\end{enumerate}
+	
+\end{question}
+
+\begin{solution}
+
+\begin{enumerate}
+	\item 
+	$	\begin{bmatrix}
+	  		8 & 7 & 3 \\
+	  		5 & 9 & \textbf{4} \\
+	  		1 & 6 & 2
+	 	\end{bmatrix}
+		\quad
+		\begin{bmatrix}
+			\textbf{8} & 7 & \textbf{3} \\
+			\textbf{4} & 9 & \textbf{5} \\
+			1 & 6 & 2
+		 \end{bmatrix}
+	$	 
+	\item
+	$
+		\begin{bmatrix}
+		(8,-8) & (3,-3) \\
+		(4,-4) & (5,-5)
+		\end{bmatrix} \\
+	$	
+	$ 8q + 3(1-q) = 4q + 5(1-q)
+		 \Leftrightarrow q = 1/3, p = 1/6$\\
+	The solution is $(1/6,1/3)$.
+	
+	\item
+	Largest: 
+	$	\begin{bmatrix}
+		 	1 & 4 & 7 \\
+		 	2 & 5 & 8 \\
+		 	\textbf{3} & 6 & 9
+		 \end{bmatrix}$\\
+	Smallest:
+	$	\begin{bmatrix}
+		 	1 & 2 & 3 \\
+		 	4 & 5 & 6 \\
+		 	\textbf{7} & 8 & 9
+		\end{bmatrix}$\\
+\end{enumerate}
+\end{solution}
+
+
+
+\begin{question}
+	In the Cournot duopoly model of last week, companies only produced at two discrete production levels: high and low. We now model the interaction when companies produce at arbitrary production levels.
+	
+	Model the interaction as a strategic game $(\{1,2\},\{A_1,A_2\},\{u_1,u_2\})$ in which $A_i = [0, +\infty)$ and $a_i \in A_i$ represents how many units of product company $i$ produces. Let the pric that a company receives for each unit be equal to $max\{C - bq, 0\}$, where $q$ is the total units of product on the market and $b > 0$. Further assume that producing a unit of product costs $c_1$ for company one and $c_2$ for company two ($c_1 > 0, c_2 > 0)$.
+	
+	\begin{enumerate}
+	\item Write down the utility function of each company.
+	\item Derive a formula for the PSNE analytically.
+	\item Determine the equilibrium for $C = 1$, $b = 1$, $c_1 = c_2 = 0$ and for $C = 10$, $b = c_1 = 1$, $c_2 = 2$.
+	\item Illustrate one of the equilibria above graphically.
+	\item Argue why there are no mixed Nash equilibria. \
+	[Hint: Take cases on the strategy played by your opponent: pure or mixed. Show that in both cases, the best response is a pure strategy].
+	\end{enumerate}
+\end{question}
+
+
+
+\begin{solution}
+	\begin{enumerate}
+	\item
+		\begin{equation*}
+		\begin{align}
+		u_1(a_1,a_2)& = a_1(max\{0,C-b(a_1+a_2)\} - C_1)\\
+		u_2(a_1,a_2)& = a_2(max\{0,C-b(a_1+a_2)\} - C_2)
+		\end{align}
+		\end{equation*}
+		
+		
+	\item 
+		\begin{equation*}
+		\begin{align}
+		u_1& = a_1(C-b(a_1+a_2) - C_1)\\
+		u_1^{'}& = C - 2ba_1 - ba_2 - c_1\\
+		\end{align}
+		\end{equation*}
+		
+		\begin{equation*}
+		\begin{align}
+		C - 2ba_1 - ba_2 - c_1& = 0\\
+		\Leftrightarrow C-ba_2-c_1& = 2ba_1
+		\end{align}
+		\end{equation*}
+		
+		\begin{equation*}
+		\begin{align}
+		a_1& = \frac{C-ba_2 - c_1}{2b}\\
+		a_2& = \frac{C - ba_1 - c_2}{2b}\\
+		a_1& = \frac{C+C_2 - 2C_1}{3b}
+		\end{align}
+		\end{equation*}
+		
+	\item
+		$(\frac{1}{3},\frac{1}{3})$ for $C = 1$, $b = 1$, $c_1 = c_2 = 0$\\
+		$(\frac{10}{3},\frac{7}{3})$ for $C = 10$, $b = c_1 = 1$, $c_2 = 2$
+	
+	\item grafiek %TODO grafiek
+	\item ontbreekt %TODO
+	\end{enumerate}
+\end{solution}
+
+\begin{question}
+Exercise 2-6 Iterative elimination of weakly dominated strategies and PSNE
+\end{question}
+
+\begin{solution}
+\end{solution}
+
+\begin{question}
+Exercise 2-7 Order of iterative elimination of strictly dominated strategies.
+\end{question}
+
+\begin{solution}
+\end{solution}
+
+\begin{question}
+Exercise 2-8
+\end{question}
+
+\begin{solution}
+\end{solution}
+
+\begin{question}
+Exercise 2-9
+\end{question}
+
+\begin{solution}
+\end{solution}
+
+
+\end{document}
