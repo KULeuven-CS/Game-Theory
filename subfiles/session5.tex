@@ -1,0 +1,150 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+%oplossingen 5-1 tem 5-5 genoteerd in de les door Brecht Gosselé en getypt door William Mauclet.
+
+\begin{question}
+Exercise 5-1: \textit{(Hard)core}
+
+Consider a game in which there are 2.000.001 players, among which 1.000.000 can each supply one left glove, and the other 1.000.001 players can supply one right glove. We assume a left glove without a right glove has no value, and neither has a right glove without a left glove. The worth of each allocation is therefore defined as the number of matched pairs that it can make.\\
+
+Model this game as a coalitional game (\textit{N},v) and characterize the core. What if there are also 1.000.001 players with a left glove?
+
+\end{question}
+
+\begin{solution} 
+\[
+N = N_L \cup N_R; v_s = min \left\{ |S \cap N_L|, |S \cap N_R| \right\}
+|N_L| < |N_R| \Rightarrow core = \left\{x\right\} 
+\]
+where 
+\[
+\begin{cases}
+ x_i = 1 ~ \text{if} ~ i \in N_L \\
+ x_i = 0 ~ \text{if} ~ i \in N_R
+\end{cases}
+\]
+
+
+$x_i = 1 \forall i \in N_L$
+$=> x_i \leq 1:$ die $N \setminus \left\{i\right\}$ is blocking (999.999 > 1M-$x_i$) (better off exluding i
+
+$x_i = 0 \forall i \in N_R$
+	$x_i \geq 0$ die $\left\{i\right\}$ is blocking $=>$ better off doing nothing
+	$x_i \leq 0$: 
+		stel $x_i = \epsilon > 0$
+			$v(N \setminus \left\{i\right\}) = 1.000.000$
+			$\sum_{i \in N\setminus\left\{i\right\}} x_i = 1.000.000 - \epsilon =>$ die $N\setminus\left\{i\right\}$ is blocking
+\end{solution}
+
+\begin{question}
+    Exercise 5-2: \textit{Capitalism}
+
+A factory is owned by a capitalist (\textit{c}) who employs two workers (\textit{w1} and \textit{w2}). The production function is such that the total output of the firm is 0 if only the capitalist or the worker(s) cooperate. The payoffs for the remaining coalitions are v($[c,w1]) = v(c,w2)] = 3$ and $v(\left\{c,w1,w2\right\})=4$.
+
+    \begin{itemize}
+        \item Characterize the core. Determine the highest combined payoff to the workers that is in the core.
+        \item Determine the Shapley value of the capitalist and the workers.
+    \end{itemize}
+\end{question}
+
+\begin{solution}
+
+\textbf{I.}
+
+\begin{tabular}{ l | c |r }
+  c & w1 & w2 \\
+  2 & 1 & 1 \\
+\end{tabular}
+
+$x_i \geq 0 \forall i \in \mathbb{N}
+x_c + x_i \geq 3 \forall i \in \left\{w1, w2\right\}
+x_c + x_w1 + x_w2 = 4
+\rightarrow
+x_i \leq 1 \forall i \in \left\{w1,w2\right\}
+2 \leq x_c \leq 4
+x_c \leq 3 \rightarrow x_i \geq 3-x_c \forall i \in \left\{w1,w2\right\}$
+
+\textbf{II.}
+
+\begin{tabular}{ l c c c c c c c c }
+  c & w1 & w2 & $->$ & c=0 & w1=3 & w2=1\\
+  c & w2 & w1 &      & c=0 & w1=1 & w2=3\\
+  w2 & w1 & c &      & c=4 & w1=0 & w2=0\\
+  w1 & c & w2 &      & w1=0 & c=3 & w2=1\\
+  w2 & c & w1 &      & w2=0 & c=3 & w1=1\\
+  w1 & w2 & c &      & c=4 & w1=0 & w2=0\\
+\end{tabular}
+
+$-> c = 14/6; w1 = 5/6; w2 = 5/6$
+\end{solution}
+
+\begin{question}
+Exercise 5-3: \textit{Generalised three-player majority game}
+
+Suppose that three players can obtain one unit of payoff, any coalition of two players can obtain $\alpha \in [0,1]$ independently of the actions of the third player, and each player alone can obtain nothing. Model this as a cooperative game and characterize the core.
+\end{question}
+
+\begin{solution}
+\begin{equation}
+ \begin{cases}
+    \sum_{x_i} = 1 ~ \text{for} ~ i \in N\\
+    x_i + x_j \geq \alpha ~ \text{for} ~ i \neq j\\
+    x_i \geq 0 ~ \text{for} ~ i \in N
+\end{cases}
+\end{equation}
+
+\[ \iff 2x_1 + 2x_2 + 2x_3 = 2 \]
+\[ \iff 3\alpha \leq 2 \]
+\[ \iff \alpha \leq 2/3 \]
+
+\[ \alpha=1 \rightarrow ~ \text{core is empty (always better off excluding 1 and forming a coalition with 2)} \] 
+\[ \alpha=2/3 \rightarrow ~ \text{core} ~ = [1/3, 1/3, 1/3] \]
+\[ \alpha<2/3 \rightarrow ~ \text{plenty of possibilities} \]
+\end{solution}
+
+\begin{question}
+Exercise 5-4: \textit{Prove that the core of a simple (AND MONOTONE) game is non-empty iff there is at least one veto player in N.}
+\end{question}
+
+\begin{solution}
+$<=$ Giving everything to veto-player is always a solution: no combination of players is better off dividing.\\
+
+$=>$ assume $x \in $ core
+$\sum x = 1$ by definition
+$\exists i* : x_{i*} = \epsilon > 0$
+$-> \forall S \subseteq N : v(S\setminus\left\{i*\right\}) \leq 1-\epsilon < 1$
+$=> v(S) = 0$ (simple game)
+
+$=> i*$ is veto player
+\end{solution}
+
+\begin{question}
+Exercise 5-5: \textit{Expedition}
+
+An expedition of \textit{n} people has discovered a treasure in the mountains, but it is very heavy. There are as many pieces of treasure as there are pairs of adventurers. Everyone gets to keep whatever he or she carries. It is possible to make (binding) agreements about redistribution before the carrying begins. Everyone only cares about his or her own payoff after redistribution. A coalitional game that models this peculiar situation very well is $(N,v)$ where \textit{N} is the set of adventurers and
+
+\begin{equation}
+v(S \subseteq N) = \begin{cases}
+|S|/2      \text{ if } |S| \text{ is even}\\
+|S|-1)/2   \text{ if } |S| \text{ is odd}
+\end{cases}
+\end{equation}
+
+Characterize the core. What do you think of this outcome?
+\end{question}
+
+\begin{solution}
+$\sum x_i = n/2$ (even) $| (n-1)/2$ (odd)
+$x_i + x_j \geq 1, i \neq j$
+$x_i + x_j + x_k \geq 1, k \neq i \neq j$
+$x_i \geq 0$
+
+n oneven => core leeg
+n = 1 => alles in core
+n = even => ?
+\end{solution}
+
+Oplossingen 5-6 tog 5-11 nog niet opgelost.
+
+\end{document}
