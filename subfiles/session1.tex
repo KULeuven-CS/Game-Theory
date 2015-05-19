@@ -2,11 +2,201 @@
 \begin{document}
 
 \begin{question}
-    Question goes here!
+    Exercise 1-1: Provide an example of a two-player NFG in which a player has two weakly dominant pure strategies, but his opponent prefers that he play one of them rather than the other.
 \end{question}
 
 \begin{solution}
-    Solution goes here!
+        \begin{center}
+    	    \begin{tabular}{|l|c|r|}
+    	    \hline
+    	    & $A_2$ & $B_2$ \\
+    	    \hline
+    	    $A_1$ & $(0,0)$ & $(x,z)$ \\
+    	    \hline
+    	    $B_1$ & $(x,y)$ & $(0,0)$ \\
+    	    \hline
+    	    \end{tabular}
+        \end{center}
+        
+        with $x > 0$ and $y > z$.
+\end{solution}
+
+\begin{question}
+Exercise 1-2: Provide an example of a two-player NFG in which a player has a dominant strategy that is not pure.
+\end{question}
+
+\begin{solution}
+Matching pennies
+        \begin{center}
+    	    \begin{tabular}{|l|c|r|}
+    	    \hline
+    	    & $A_2$ & $B_2$ \\
+    	    \hline
+    	    $A_1$ & $(0,0)$ & $(x,z)$ \\
+    	    \hline
+    	    $B_1$ & $(x,y)$ & $(0,0)$ \\
+    	    \hline
+    	    \end{tabular}
+        \end{center}
+        
+(onzeker, kan iemand bevestigen?)
+\end{solution}
+
+\begin{question}
+Exercise 1-3 Cournot duopoly\\
+In a Cournot duopoly, two firms produce identical products. They each have two discrete production levels, high or low. If they produce at high production, they have a lot of the good to sell, while at low production they have less to sell. The market price of the product depends on the amount of available product, which depends on the production level of both firms. In the case where both firms cooperate 1 and produce at the low production level, the product is rare and fetches a high price on the market. In contrast, when they both produce at the high production level, the price of the product drops significantly and both firms have lower profits than when cooperating. In the case where only one of the firms produces at the high production level, the decrease in the price of the product is compensated by higher sales, increasing the profits of the firm that produces at a high level such that its profit are higher than when cooperating. The competitor is then even worse off than when also producing at high production.\\
+
+Answer the following questions.
+\begin{enumerate}
+	\item Analyse the preferences of the players.
+	\begin{enumerate}
+		\item List all possible outcomes of the interaction described above.
+		\item Describe each player’s preferences over the set of outcomes.
+	\end{enumerate}
+	\item Model this interaction as a game.
+	\begin{enumerate}
+		\item List the possible actions of each player in this game.
+		\item Describe each player’s preferences over the set of outcomes.
+		\item Write down the game in matrix form. Suppose that a company’s utility equals its utility and that producing alone yields \euro 100 profit for one firm and \euro10 for the other, while both producing at low / high production yields \euro70 / \euro30 for both firms.
+	\end{enumerate}
+	
+	\item Nash equilibria
+	\begin{enumerate}
+		\item List all Nash equilibria (i.e. list the Nash equilibria and argue why there are no others). 
+		\item Could you have derived the Nash equilibria from the preference relation alone (i.e. does the additional information in 2b. influence your answer this question)?
+	\end{enumerate}
+	
+	\item Pareto-optimality
+	\begin{enumerate}
+		\item Determine all Pareto-optimal outcomes.
+		\item Are there Pareto-optimal outcomes that you prefer over others? Why?
+	\end{enumerate}		
+		
+	\item Does this game remind you of another game?
+\end{enumerate}
+\end{question}
+
+\begin{solution}
+\begin{enumerate}
+	\item Analyse the preferences of the players.
+	\begin{enumerate}
+		\item O1: (low, low)\\
+				O2: (high, low)\\
+				O3: (low, high)\\
+				O4: (high, high)\\
+		\item  P1: $O2 > O1 > O4 > O3$ \\
+			P2: $O3 > O1 > O4 > O2$
+	\end{enumerate}
+	\item Model this interaction as a game.
+	\begin{enumerate}
+		\item A: high, B: low 
+		\item	\begin{tabular}{|l|c|r|}
+		    	    \hline
+		    	    & $A_2$ & $B_2$ \\
+		    	    \hline
+		    	    $A_1$ & $(70,70)$ & $(100,10)$ \\
+		    	    \hline
+		    	    $B_1$ & $(10,100)$ & $(30,30)$ \\
+		    	    \hline
+		    	\end{tabular}
+		       
+	\end{enumerate}
+	
+	\item (30,30)
+	
+	\item 
+	\begin{enumerate}
+		\item (70,70), (100,10) and (10,100)
+		\item yes
+	\end{enumerate}		
+		
+	\item Prisoner's dilemma
+\end{enumerate}
+\end{solution}
+
+\begin{question}
+Exercise 1-4 To pay or not to pay\\
+
+Every day, railway customers face the decision of whether or not to buy a train ticket. Likewise, the railway company has to decide on whether or not to check if customers are in possession of a ticket. We assume that the objective of both the customer and the railway company is to optimize their own costs/profits. In the case where customers are in the possession of a ticket and the railway company checks, the railway company regrets checking (lost effort). In the case where customers are in the possession of a ticket and the railway company does not check, the customer regrets buying a ticket (buying a ticket was unnecessary). In the other cases, either the railway company or the customer is happy and the other party is unhappy. The railway company prefers being able to fine a customer over a paying customer that they do not have to check.\\
+
+Answer the following questions.
+\begin{enumerate}
+	\item Analyse the preferences of the players.
+	\begin{enumerate}
+		\item List all possible outcomes of the interaction described above.
+		\item Describe each player’s preferences over the set of outcomes.
+	\end{enumerate}
+	\item Model this interaction as a game.
+	\begin{enumerate}
+		\item List the possible actions of each player in this game.
+		\item Describe each player’s preferences over the set of outcomes.
+		\item Write down the game in matrix form. Assume that checking costs the railway company \euro1, that a ticket costs \euro10 and that the fine is \euro20.
+	\end{enumerate}
+	
+	\item Nash equilibria
+	\begin{enumerate}
+		\item List all Nash equilibria (i.e. list the Nash equilibria and argue why there are no others). 
+		\item Could you have derived the Nash equilibria from the preference relation alone?
+	\end{enumerate}
+	
+	\item Determine all Pareto-optimal outcomes.
+		
+\end{enumerate}
+
+
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{question}
+Exercise 1-5 Making a calculated guess\\
+Consider the $n$-player game where each player has to name a natural number $x$ with $ 0 \leq x \leq 100$ and the player that is closest to two thirds of the average guess becomes the winner (say he gets a prize); all of the other players are losers (they get nothing). In the case of a tie, the prize is split among the winners. Consequently, players strictly prefer to win alone.\\
+
+\begin{enumerate}
+\item Analyse the preferences of the players.
+	\begin{enumerate}
+	\item Is it feasible to write down all outcomes of the interaction like you did before?
+	\item Describe each player’s preferences over the set of outcomes.
+	\end{enumerate}
+\item Model this interaction as a game.
+	\begin{enumerate}
+	\item For each player, what are the available actions in this game?
+	\item Can you write down the game in matrix form? If feasible, do so.
+	\end{enumerate}
+\item Nash equilibria
+	\begin{enumerate}
+	\item For $n = 2$, list all Nash equilibria; prove that there are no others.
+	\item For general $n$ list all Nash equilibria; prove that there are no others.
+	\end{enumerate}	
+\item Answer the questions in part III again for the following variations of the game.
+	\begin{enumerate}
+	\item In case of a tie, a single winner is picked randomly from the set of tied players.
+	\item In case of a tie, there are no winners (consider only the case $n=2$).
+	\end{enumerate}	
+\end{enumerate}
+Note: Even though the result of 3b might seem obvious, its proof is nontrivial.
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{question}
+
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{question}
+
+\end{question}
+
+\begin{solution}
+
 \end{solution}
 
 \end{document}
