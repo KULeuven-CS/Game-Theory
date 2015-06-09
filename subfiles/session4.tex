@@ -65,9 +65,65 @@ Exercise 4-3: Consider the following stage game.
 
 \begin{solution}
 \begin{enumerate}
-\item $(B,R)$ $(T,L)$
-\item TODO
-\item TODO
+\item $(T,L)$; $(B,R)$
+
+\item
+\begin{itemize}
+\item Repetitions of stage game NE: $(TT,LL); (BB,RR)$
+\item Combinations of stage game NE: $(TB,LR); (BT,RL)$
+\item NE with grim triggers: $((M ~ GT_1), (M ~ GT_2))$ if $\delta \geq \frac{1}{3}$ \\
+	$GT_1$ : play $M$ if player 2 played $M$ in the first game, otherwise play $T$ (= minmax) \\
+	$GT_2$ : play $M$ if player 1 played $M$ in the first game, otherwise play $L$ (= minmax) \\		
+	Deviation is profitable if
+	$5 + 1 \delta > 4 + 4 \delta \Leftrightarrow 1 > 3 \delta \Leftrightarrow \delta < \frac{1}{3}$
+\end{itemize}
+TODO: These are obviously PSNE, but which of these are also subgame-perfect (SPNE)?
+
+\item
+Maximum punishment for player 1 (by player 2)? \\
+$\Rightarrow$ Find minmax value of player 1 \\
+$\Rightarrow$ Calculate (mixed strategy) NE of zero-sum game with player 1's payoffs
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+                            & \multicolumn{1}{l}{Left} & \multicolumn{1}{l}{Middle} & \multicolumn{1}{l}{Right} \\ \hline
+\multicolumn{1}{l|}{Top}    & (1, -1)                  & (5, -5)                    & (0, 0)                    \\
+\multicolumn{1}{l|}{Middle} & (0, 0)                   & (4, -4)                    & (0, 0)                    \\
+\multicolumn{1}{l|}{Right}  & (0, 0)                   & (0, 0)                     & (3, -3)                   
+\end{tabular}
+\end{table}
+
+Note that M is weakly dominated by T for player 1, and M is weakly dominated by L for player 2. Both M actions can be eliminated, and the NE of the remaining $2 \times 2$ NFG can be found:
+\[
+\begin{cases}
+-1 p + 0 (1-p) &= 0 p - 3 (1-p) \\
+1 q + 0 (1-q)  &= 0 q + 3 (1-q)
+\end{cases}
+\Rightarrow
+\begin{cases}
+p  &= \frac{3}{4} \\
+q  &= \frac{3}{4}
+\end{cases}
+\]
+	
+Player 1's minmax value is his expected payoff when playing this minmax strategy:
+\[
+1 p q + 3 (1-p) (1-q) = \frac{3}{4}
+\]
+	
+Player 1's deviation from $(M, M)$ is profitable if:
+\begin{align*}
+5 + \frac{3}{4} \sum\limits_{i=1}^{\infty} p^i &> 4 \sum\limits_{i=0}^{\infty} p^i \\
+5 + \frac{3}{4} \left( \frac{1}{1 - p} - 1 \right) &> \frac{4}{1 - p} \\
+20 + \frac{3}{1 - p} - 3 &> \frac{16}{1 - p} \\
+17 &> \frac{13}{1 - p} \\
+p &< \frac{4}{17}
+\end{align*}
+Since the game is symmetric, this result also applies for a deviation by player 2. \\
+$(M, M)$ can therefore be sustained as a NE by grim triggers if $p \geq p^* = \frac{4}{17}$
+	
+TODO: Is this NE a SPNE?
+
 \end{enumerate}
 \end{solution}
 
