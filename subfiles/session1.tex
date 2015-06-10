@@ -2,14 +2,16 @@
 \begin{document}
 
 \begin{question}
-    Exercise 1-1: Provide an example of a two-player NFG in which a player has two weakly dominant pure strategies, but his opponent prefers that he play one of them rather than the other.
+	Exercise 1-1: Provide an example of a two-player NFG in which a player has two \textbf{very} weakly dominant pure strategies, but his opponent prefers that he play one of them rather than the other.
+	\textit{[\textbf{update:} After reporting the erratum, described below, the teaching assistant confirmed that the `very' was indeed missing.]}
 \end{question}
 
 \begin{solution}
 	\label{twoweak}
-	I think this exercises asks something impossible probably due to the subtle difference between \emph{very} weak dominance and weak dominance.
+	I think this exercise asks something impossible, probably due to the subtle difference between `\emph{very} weak dominance' and `weak dominance'.
 	Two weakly dominant strategies can NEVER weakly dominate each other by definition and therefore can NOT coexist.
 	We will prove this by contradiction.
+
 	Let's start with the assumption that $A,B$ are both pure strategies of player one.
 	For a strategy to be weakly dominant it will weakly dominate ANY other strategy for that agent.
 	This means that we can assume that $A$ weakly dominates $B$ and vice versa.
@@ -59,6 +61,7 @@
     	    \hline
     	    \end{tabular}
         \end{center}
+
 \end{solution}
 
 \begin{question}
@@ -82,6 +85,9 @@ This game obviously has no pure dominant strategy.
 We know that this game has a Nash Equilibrium in which both players choose Heads and Tails with 50\% chance as strategy.
 %TODO:Fix reasoning. Show that any mixed strategy dominates a pure strategy
 The corresponding strategy profile for this equilibrium is $\big((0.5,0.5), (0.5,0.5)\big)$.
+% The expected payoff for player one playing the pure strategy Heads is $0.5*1 + 0.5* -1 = 0$.
+% The expected payoff for player one playing the pure strategy Tails is $0.5*-1 + 0.5* 1 = 0$.
+% The expected payoff for player one when playing the mixed $(0.5,0.5)$ strategy is $0.5*(0.5*1 + 0.5* -1) + 0.5*(0.5*-1 + 0.5* 1)= 0$.
 Because of this, the Matching Pennies game satisfies the question (not one, but even both players have a mixed dominant strategy).
 \end{solution}
 
@@ -277,19 +283,20 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 \end{solution}
 
 \begin{question}
-	Prove that, if a player has two weakly dominant strategies, then for every strategy choice by her opponents the two strategies yield him equal payoffs.
+	Prove that, if a player has two \textbf{very} weakly dominant strategies, then for every strategy choice by her opponents the two strategies yield him equal payoffs.
+	\textit{[\textbf{update:} After reporting the erratum, described below, the teaching assistant confirmed that the `very' was indeed missing.]}
 \end{question}
 
 \begin{solution}
-	Again I think they mean ``VERY weakly dominant strategies'' because it would be impossible otherwise (see \autoref{twoweak}).
-	Let's call the very waekly dominant strategies for player 1 $A$ and $B$.
+	Again I assume that it should be ``VERY weakly dominant strategies'' because a solution would be impossible otherwise (see \autoref{twoweak}).
+	Let's call the very weakly dominant strategies for player 1 $A$ and $B$.
 	The set of strategy profiles of remaining players is $S$ and $u_1(S1,S2)$ is the utility function of player one.
-	If $A$ very weakly dominates $B$ so the following holds by definition \egtcite{20}:
+	If $A$ very weakly dominates $B$ the following holds by definition \egtcite{20}:
 	\begin{equation}
 		\label{eq:vw1}
 		\forall s_{\--i} \in S : u_1(A,s_{\--i}) \geq u_1(B,s_{\--i})
 	\end{equation}
-	If $B$ very weakly dominates $A$ so the following ALSO holds by definition \egtcite{20}:
+	If $B$ very weakly dominates $A$ the following ALSO holds by definition \egtcite{20}:
 	\begin{equation}
 		\label{eq:vw2}
 		\forall s_{\--i} \in S : u_1(B,s_{\--i}) \geq u_1(A,s_{\--i})
