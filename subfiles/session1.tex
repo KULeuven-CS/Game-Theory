@@ -242,7 +242,34 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 \end{question}
 
 \begin{solution}
+	We will prove this statement by contradiction.
+	Let's assume that $\overline{s}_i$ is a strictly dominant strategy for player $i$ ($\overline{s}_i \in S_i$) that is not played in some Nash equilibrium $N = (s_1,\ldots,s'_i,\ldots,s_n)$ because $s'_i \neq \overline{s}_i$ is played there instead.
 
+	From the definition of a Nash equilibrium \egtcite{11} we find that $s'_i$ is a best response to $s_{\--i}$.
+	The definition of a Best response of player $i$ to the strategy profile $s_{\--i}$ states that $s'_i \in S_i$ is a mixed strategy such that:
+	\begin{equation}
+		\label{eq:bestr}
+		\forall s_i \in S_i : u_i(s'_i,s_{\--i}) \geq u_i(s_i,s_{\--i})
+	\end{equation}
+	In particular the following also holds for the strictly dominant strategy since $\overline{s}_i \in S_i$:
+	\begin{equation}
+		\label{eq:uneq1}
+		u_i(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})
+	\end{equation}
+	Because $\overline{s}_i$ is strictily dominant the following holds \egtcite{20}:
+	\begin{equation}
+		\forall s_i \in S_i/\{\overline{s}_i\}: \forall s_{\--i} \in S_{\--i} : u_1(\overline{s}_i,s_{\--i}) > u_1(s_i,s_{\--i})
+	\end{equation}
+	And in particular since $\overline{s}_i \neq s'_i \Rightarrow s'_i \in S_i/\{\overline{s}_i\}$:
+	\begin{equation}
+		\label{eq:uneq2}
+		 u_1(\overline{s}_i,s_{\--i}) > u_1(s'_i,s_{\--i})
+	\end{equation}
+	If we now cominbe \autoref{eq:uneq1} and \autoref{eq:uneq2}:
+	\begin{equation}
+		 u_1(\overline{s}_i,s_{\--i}) > u_1(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})
+	\end{equation}
+	This unequality clearly can not hold under the given assumptions. Indeed if $s'_i = \overline{s}_i$ \autoref{eq:uneq2} can no longer hold and still holds $u_1(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})$. By condradiction we proved the given statement. $\blacksquare$ 
 \end{solution}
 
 \begin{question}
