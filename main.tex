@@ -12,6 +12,9 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{eurosym}
+\usepackage[backend=bibtex,style=ieee]{biblatex}
+\bibliography{main}
+
 \graphicspath{{images/}{../images/}}
 
 \title{Game Theory}
@@ -26,6 +29,10 @@
 \theoremstyle{definition}
 \newtheorem{solution}{Solution}
 \numberwithin{solution}{section}
+
+%Command for page citing the Essentials of Game Theory book.
+% #1 page to cite
+\newcommand{\egtcite}[1]{\cite[p.~#1]{Leyton-Brown:2008:EGT:1481632}}
 
 \begin{document}
 
@@ -52,5 +59,8 @@
 
 \section{Exercise Session 5}
 \subfile{subfiles/session5.tex}
+
+\nocite{*}
+\printbibliography
 
 \end{document}

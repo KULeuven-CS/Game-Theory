@@ -6,19 +6,53 @@
 \end{question}
 
 \begin{solution}
+	This exercises asks something impossible! Two weakly dominant strategies can NEVER weakly dominate each other by definition and therefore can NOT coexist.
+	We will prove this by contradiction.
+	Let's start with the assumption that $A,B$ are both pure strategies of player one. For a strategy to be weakly dominant it will weakly dominate ANY other strategy for that agent. This means that we can assume that $A$ weakly dominates $B$ and vice versa. The set of strategy profiles of remaining players is $S_2$ and $u_1(S1,S2)$ is the utility function of player one.
+
+	If $A$ weakly dominates $B$ for player 1 the following holds by definition \egtcite{20}:
+	\begin{equation}
+		\label{eq:Adom1}
+		\forall s_{\--i} \in S_2 : u_1(A,s_{\--i}) \geq u_1(B,s_{\--i})
+	\end{equation}
+	and
+	\begin{equation}
+		\label{eq:Adom2}
+		\exists s_{\--i} \in S_2 : u_1(A,s_{\--i}) > u_1(B,s_{\--i})
+	\end{equation}
+
+	If $B$ weakly dominates $A$ for player 1 the following ALSO holds by definition \egtcite{20}:
+	\begin{equation}
+		\label{eq:Bdom1}
+		\forall s_{\--i} \in S_2 : u_1(B,s_{\--i}) \geq u_1(A,s_{\--i})
+	\end{equation}
+	and
+	\begin{equation}
+		\label{eq:Bdom2}
+		\exists s_{\--i} \in S_2 : u_1(B,s_{\--i}) > u_1(A,s_{\--i})
+	\end{equation}
+
+	We can easily combine \autoref{eq:Adom1} and \autoref{eq:Bdom1} because they iterate over the same set:
+	\begin{equation}
+		\label{eq:equal}
+		\forall s_{\--i} \in S_2 : u_1(A,s_{\--i}) \geq u_1(B,s_{\--i}) \geq u_1(A,s_{\--i}) \\ \Rightarrow \forall s_{\--i} \in S_2 :  u_1(A,s_{\--i}) = u_1(B,s_{\--i})
+	\end{equation}
+
+	Now \autoref{eq:equal} is in contradiction with the existence of a strategy that is \emph{strictly} better for some strategy of an opponent as required by either \autoref{eq:Adom2} or \autoref{eq:Bdom2}.
+	By contradiction we find that our initial assumption of two weakly dominant strategies can never hold. $\blacksquare$
+
+	Probably they made an error in their question and it should read ``two VERY weakly dominant pure strategies''. Because equality is sufficient for this property these strategies CAN coexist. Under that altered assumption there are plenty solutions e.g.: 
         \begin{center}
-    	    \begin{tabular}{|l|c|r|}
+    	    \begin{tabular}{|l|c|}
     	    \hline
-    	    & $A_2$ & $B_2$ \\
+    	    & $A_2$ \\
     	    \hline
-    	    $A_1$ & $(0,0)$ & $(x,z)$ \\
+			$A_1$ & $(0,1)$\\
     	    \hline
-    	    $B_1$ & $(x,y)$ & $(0,0)$ \\
+    	    $B_1$ & $(0,2)$\\
     	    \hline
     	    \end{tabular}
         \end{center}
-        
-        with $x > 0$ and $y > z$.
 \end{solution}
 
 \begin{question}
