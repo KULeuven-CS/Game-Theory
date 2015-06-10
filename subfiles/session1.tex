@@ -8,7 +8,10 @@
 \begin{solution}
 	This exercises asks something impossible! Two weakly dominant strategies can NEVER weakly dominate each other by definition and therefore can NOT coexist.
 	We will prove this by contradiction.
-	Let's start with the assumption that $A,B$ are both pure strategies of player one. For a strategy to be weakly dominant it will weakly dominate ANY other strategy for that agent. This means that we can assume that $A$ weakly dominates $B$ and vice versa. The set of strategy profiles of remaining players is $S_2$ and $u_1(S1,S2)$ is the utility function of player one.
+	Let's start with the assumption that $A,B$ are both pure strategies of player one.
+	For a strategy to be weakly dominant it will weakly dominate ANY other strategy for that agent.
+	This means that we can assume that $A$ weakly dominates $B$ and vice versa.
+	The set of strategy profiles of remaining players is $S_2$ and $u_1(S1,S2)$ is the utility function of player one.
 
 	If $A$ weakly dominates $B$ for player 1 the following holds by definition \egtcite{20}:
 	\begin{equation}
@@ -41,7 +44,8 @@
 	Now \autoref{eq:equal} is in contradiction with the existence of a strategy that is \emph{strictly} better for some strategy of an opponent as required by either \autoref{eq:Adom2} or \autoref{eq:Bdom2}.
 	By contradiction we find that our initial assumption of two weakly dominant strategies can never hold. $\blacksquare$
 
-	Probably they made an error in their question and it should read ``two VERY weakly dominant pure strategies''. Because equality is sufficient for this property these strategies CAN coexist. Under that altered assumption there are plenty solutions e.g.: 
+	Probably they made an error in their question and it should read ``two VERY weakly dominant pure strategies''. Because equality is sufficient for this property these strategies CAN coexist.
+	Under that altered assumption there are plenty solutions e.g.: 
         \begin{center}
     	    \begin{tabular}{|l|c|}
     	    \hline
@@ -60,20 +64,23 @@ Exercise 1-2: Provide an example of a two-player NFG in which a player has a dom
 \end{question}
 
 \begin{solution}
-Matching pennies
+The Matching Pennies game is a good example of such a two-player NFG.
         \begin{center}
-    	    \begin{tabular}{|l|c|r|}
+    	    \begin{tabular}{|l|c|c|}
     	    \hline
-    	    & $A_2$ & $B_2$ \\
+    	    & $Heads$ & $Tails$ \\
     	    \hline
-    	    $A_1$ & $(0,0)$ & $(x,z)$ \\
+    	    $Heads$ & $(1,-1)$ & $(-1,1)$ \\
     	    \hline
-    	    $B_1$ & $(x,y)$ & $(0,0)$ \\
+    	    $Tails$ & $(-1,1)$ & $(1,-1)$ \\
     	    \hline
     	    \end{tabular}
         \end{center}
-        
-(onzeker, kan iemand bevestigen?)
+This game obviously has no pure dominant strategy.
+We know that this game has a Nash Equilibrium in which both players choose Heads and Tails with 50\% chance as strategy.
+The corresponding strategy profile for this equilibrium is $\big((0.5,0.5), (0.5,0.5)\big)$.
+Every strategy that is part of Nash Equilibrium is by definition dominant otherwise the player would pick an other, better, strategy for himself and thus deviate from the equilibrium.
+Because of this, the Matching Pennies game satisfies the question (not one, but even both players have a mixed dominant strategy).
 \end{solution}
 
 \begin{question}
