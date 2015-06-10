@@ -7,7 +7,8 @@
 
 \begin{solution}
 	\label{twoweak}
-	This exercises asks something impossible! Two weakly dominant strategies can NEVER weakly dominate each other by definition and therefore can NOT coexist.
+	I think this exercises asks something impossible probably due to the subtle difference between \emph{very} weak dominance and weak dominance.
+	Two weakly dominant strategies can NEVER weakly dominate each other by definition and therefore can NOT coexist.
 	We will prove this by contradiction.
 	Let's start with the assumption that $A,B$ are both pure strategies of player one.
 	For a strategy to be weakly dominant it will weakly dominate ANY other strategy for that agent.
@@ -45,7 +46,7 @@
 	Now \autoref{eq:equal} is in contradiction with the existence of a strategy that is \emph{strictly} better for some strategy of an opponent as required by either \autoref{eq:Adom2} or \autoref{eq:Bdom2}.
 	By contradiction we find that our initial assumption of two weakly dominant strategies can never hold. $\blacksquare$
 
-	Probably they made an error in their question and it should read ``two VERY weakly dominant pure strategies''. Because equality is sufficient for this property these strategies CAN coexist.
+	If we assume that they meant ``two VERY weakly dominant pure strategies'' the question does have solution(s). Because equality is sufficient for this property these strategies CAN coexist.
 	Under that, altered, assumption there are plenty solutions e.g.: 
         \begin{center}
     	    \begin{tabular}{|l|c|}
@@ -79,8 +80,8 @@ The Matching Pennies game is a good example of such a two-player NFG.
         \end{center}
 This game obviously has no pure dominant strategy.
 We know that this game has a Nash Equilibrium in which both players choose Heads and Tails with 50\% chance as strategy.
+%TODO:Fix reasoning. Show that any mixed strategy dominates a pure strategy
 The corresponding strategy profile for this equilibrium is $\big((0.5,0.5), (0.5,0.5)\big)$.
-Every strategy that is part of Nash Equilibrium is by definition dominant otherwise the player would pick an other, better, strategy for himself and thus deviate from the equilibrium.
 Because of this, the Matching Pennies game satisfies the question (not one, but even both players have a mixed dominant strategy).
 \end{solution}
 
