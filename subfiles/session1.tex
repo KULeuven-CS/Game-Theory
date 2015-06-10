@@ -6,6 +6,7 @@
 \end{question}
 
 \begin{solution}
+	\label{twoweak}
 	This exercises asks something impossible! Two weakly dominant strategies can NEVER weakly dominate each other by definition and therefore can NOT coexist.
 	We will prove this by contradiction.
 	Let's start with the assumption that $A,B$ are both pure strategies of player one.
@@ -45,7 +46,7 @@
 	By contradiction we find that our initial assumption of two weakly dominant strategies can never hold. $\blacksquare$
 
 	Probably they made an error in their question and it should read ``two VERY weakly dominant pure strategies''. Because equality is sufficient for this property these strategies CAN coexist.
-	Under that altered assumption there are plenty solutions e.g.: 
+	Under that, altered, assumption there are plenty solutions e.g.: 
         \begin{center}
     	    \begin{tabular}{|l|c|}
     	    \hline
@@ -279,7 +280,24 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 \end{question}
 
 \begin{solution}
-
+	Again I think they mean ``VERY weakly dominant strategies'' because it would be impossible otherwise (see \autoref{twoweak}).
+	Let's call the very waekly dominant strategies for player 1 $A$ and $B$.
+	The set of strategy profiles of remaining players is $S$ and $u_1(S1,S2)$ is the utility function of player one.
+	If $A$ very weakly dominates $B$ so the following holds by definition \egtcite{20}:
+	\begin{equation}
+		\label{eq:vw1}
+		\forall s_{\--i} \in S : u_1(A,s_{\--i}) \geq u_1(B,s_{\--i})
+	\end{equation}
+	If $B$ very weakly dominates $A$ so the following ALSO holds by definition \egtcite{20}:
+	\begin{equation}
+		\label{eq:vw2}
+		\forall s_{\--i} \in S : u_1(B,s_{\--i}) \geq u_1(A,s_{\--i})
+	\end{equation}
+	Combining \autoref{eq:vw1} and \autoref{eq:vw2} we find:
+	\begin{equation}
+		\forall s_{\--i} \in S : u_1(A,s_{\--i}) \geq u_1(B,s_{\--i}) \geq u_1(A,s_{\--i})
+	\end{equation}
+	This equation can only hold if $u_1(A,s_{\--i}) = u_1(B,s_{\--i})$ for every strategy chosen by the opponents. \textit{Q.E.D.}
 \end{solution}
 
 \begin{question}
