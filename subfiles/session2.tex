@@ -40,9 +40,35 @@
     		\end{itemize}
     	\item
     		All strategies on the Top and bottom rows are weakly dominated.
-    	\item Yes: removing the bottom row first and then the last column will result in a different outcome than removing the top row first, then the bottom row and finally the last column.
-    	\item ontbreekt %TODO missing
-    	\item (Bottom, Right) ?
+    	\item Yes: removing the bottom row first and then the last column (a) will result in a different outcome than removing the top row first, then the bottom row and finally the last column (b).
+    	\item We consider the two different results of the iterative removal of dominated strategies seperatly.
+			\begin{enumerate}[(a)]
+				\item The first result is: \\
+					\begin{center}
+						\begin{tabular}{|l|c|}
+							\hline
+							& Left \\
+							\hline
+							Top & (1,1) \\
+							\hline
+							Middle & (1,2) \\
+							\hline
+						\end{tabular}
+					\end{center}
+					Only PSNEs that already exist in the initial game remain so for this cases there are no new PSNEs.
+			\item  The second result is: \\
+				\begin{center}
+					\begin{tabular}{|l|c|}
+						\hline
+						& Left \\
+						\hline
+						Middle & (1,2) \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Again only a full game PSNE remains so there are no additional PSNEs.
+			\end{enumerate}
+    	\item We can see from the previous question that only (Bottom, Right) can never be a PSNE after iterative removal of weakly dominated strategies. 
     \end{enumerate}
 \end{solution}
 
