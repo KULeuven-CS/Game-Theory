@@ -196,6 +196,93 @@ Answer the following questions.
 \end{question}
 
 \begin{solution}
+\begin{enumerate}
+	\item Analyse the preferences of the players.
+	\begin{enumerate}
+		\item List all possible outcomes of the interaction described above.
+		\item Describe each player’s preferences over the set of outcomes.
+	\end{enumerate}
+	\item Model this interaction as a game.
+	\begin{enumerate}
+		\item List the possible actions of each player in this game.
+		\item Describe each player’s preferences over the set of outcomes.
+		\item The game bellow assumes that the traveler regrets paying if there is no check with a cost of $2$ (resulting in $-12$ cost for the traveler in that case):
+			\begin{center}
+				\begin{tabular}{|r|c|c|}
+					\hline
+					& $C(heck)$ & $NC(heck)$ \\
+					\hline
+					$P(ay)$ & $(-10,9)$ & $(-12,10)$ \\
+					\hline
+					$NP(ay)$ & $(-20,19)$ & $(0,0)$ \\
+					\hline
+				\end{tabular}
+			\end{center}
+	\end{enumerate}
+	
+	\item Nash equilibria
+	\begin{enumerate}
+		\item To find all the Nash Equilibria we first look at the pure strategies.
+			It's clear that there are no pure strategy Nash equilibria. If one should exists there should be a cell for which both players consider that strategy their best response. If we markt the pure strategy best responses ($\underline{underline}$ for traveler, $\overline{overline}$ for railway) we can easiliy show that this is not the case:\\
+		 \setlength\extrarowheight{1pt}
+		 \begin{center}
+			 \begin{tabular}{|r|c|c|}
+				 \hline
+				 & $C(heck)$ & $NC(heck)$ \\
+				 \hline
+				 $P(ay)$ & $(\underline{-10},9)$ & $(-12,\overline{10})$ \\ 
+				 \hline
+				 $NP(ay)$ & $(-20,\overline{19})$ & $(\underline{0},0)$ \\ 
+				 \hline
+			 \end{tabular}
+		 \end{center}
+
+		 Let's now look for the mixed strategy Nash equilibibria.
+		 This means each player will play one of their pure strategies with a certain probablitity.
+		 The probablity used by one player must make all other players indifferent between their pure strategies otherwise they would never use a mixed strategy \egtcite{12}. For an extensive explaination see \cite{mixedstr}. Lets introduce the probabilities $q$ for the rowplayer and $p$ for the column player:
+
+			\begin{center}
+				\begin{tabular}{|r|c|c|}
+					\hline
+					& $p : C(heck)$ & $1-p :NC(heck)$ \\
+					\hline
+					$q:P(ay)$ & $(-10,9)$ & $(-12,10)$ \\
+					\hline
+					$1-q: NP(ay)$ & $(-20,19)$ & $(0,0)$ \\
+					\hline
+				\end{tabular}
+			\end{center}
+
+		To determine rowplayer strategy ($q$) we now know that the column player should be indifferent between player $C$ and $NC$ or in symbols:
+		$$U_C = U_{NC}$$
+		The expected utilities are dependant on the payoffs of the column player and the probability $q$:
+		$$U_C = 9q + 19 (1-q)$$
+		$$U_{NC} = 10 q + 0 (1-q)$$
+		We can now easily solve for $q$:
+		$$U_C = 9q + 19 (1-q) = 10 q + 0 (1-q) = U_{NC}$$
+		$$ 9q + 19- 19q = 10 q$$
+		$$ 19 = 10 q - 9q + 19q$$
+		$$ 19 = 20 q$$
+		$$ \frac{19}{20} = q$$
+
+
+		We can determine the strategy of the rowplayer analogously (solving for $p$):
+		$$U_P = -10p - 12 (1-p) = -20 p + 0 (1-p) = U_{NP}$$
+		$$ -10p - 12 +12p = -20 p $$
+		$$ -12 = -20 p +10p -12p$$
+		$$ -12 = -22 p$$
+		$$ \frac{-12}{-22} = \frac{6}{11} = p$$
+
+		The result gives us the weak Nash equilibrium: $$s=\Big((\frac{19}{20},\frac{1}{20}),(\frac{6}{11},\frac{5}{11})\Big)$$
+		Because this equilibrium contains the best responses of all players in all (rational) situations this equilibrium is unique. So the game has only a single Nash Equilibrium. \\(\textit{Is there a better way to verify/prove this?})
+
+
+	\item It would be impossible to derive the Nash Equilibria from the preference relation alone because we clearly used the payoff values to determine the Nash Equilibirum. It would, however, be possible to determine (the non-existance of) \emph{pure} Nash equilibria from the preference relation alone.
+	\end{enumerate}
+	
+	\item Determine all Pareto-optimal outcomes.
+		
+\end{enumerate}
 
 \end{solution}
 
