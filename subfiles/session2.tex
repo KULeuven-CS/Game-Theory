@@ -73,15 +73,26 @@
 \end{solution}
 
 \begin{question}
-Consider an arbitrary two-player normal form game $G = ({1,2},{A_1,A_2},{u_1,u_2})$. Let $i \in N$ and her maximin be $w_i$ and minimax value be $v_i$. Prove that $v_i \geq w_i$.
+	Consider an arbitrary two-player normal form game $G = (N=\{P_1,P_2\},\{A_1,A_2\},\{u_1,u_2\})$.
+	Let $i \in N$ and her maxmin value be $w_i$ and minmax value be $v_i$. Prove that $v_i \geq w_i$.
 \end{question}
 
 \begin{solution}
- To Prove : $v_i \geq w_i$.\\
- $w_i = u_i(s_{i}^{*},s_{-i}^{*})$
- $v_i = \min\limits_{s_{-i}} \max\limits_{s_i} u_i(s_i,s_{-i})$\\
- 	Where $\max_{s_i} u_i(s_i,s_{-i})\\ \geq
- 	u_i(s_i^{*}, s_{-i}) = u_i(s_i^{*},s_{-i}^{*}) = w_i$
+	We will prove $v_i \geq w_i$ using the definitions of maxmin and minmax.
+
+	The defnition of maxmin $w_i$ in symbols is \egtcite{15}:
+	\begin{equation}
+		w_i = \max_{s_i} \min_{s_{\--i}} u_i(s_i,s_{\--i}) = u_i(s_{i}^{*},s_{-i}^{*})
+	\end{equation}
+	and where \--i indicates the oposing player. 
+
+	$$v_i = \min_{s_{\--i}} \max_{s_i} u_i(s_i,s_{\--i})$$
+
+	Following from the definition of $\max_{s_i}$:
+	$$\max_{s_i} u_i(s_i,s_{\--i}) \geq u_i(s_i^{*}, s_{\--i})$$
+	In particular this also holds for:
+	$$\max_{s_i} u_i(s_i,s_{\--i}) \geq u_i(s_i^{*},s_{\--i}^{*}) = w_i$$
+	And if the lefthandside is already bigger than $w_i$ so will $v_i$.
 \end{solution}
 
 \begin{question}
