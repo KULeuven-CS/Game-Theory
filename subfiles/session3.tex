@@ -11,7 +11,7 @@
 \begin{solution} 
 \begin{itemize}
 	\item Subgame perfect: $[(Not Play, Steal),(Distrust)]$
-	\item Non subgame perfect: $[(Not Play, Share),(Trust)]$
+	\item Non subgame perfect: $[(Not Play, Share),(Distrust)]$
 \end{itemize}
 \end{solution}
 
@@ -107,18 +107,19 @@ Players 1 and 2 must decide whether or not to carry an umbrella when leaving hom
 \begin{center}
 	    \begin{tabular}{|l|c|c|c|c|}
 	    \hline
-	    			& $U_1 U$ 		& $U_1 NU$ 		& $NU_1 U$ 		& $NU_1 NU$ 	\\
+	    			      & $U_1 U$ 		& $U_1 NU$ 		& $NU_1 U$ 		& $NU_1 NU$ 	\\
 	    \hline
-	    $U_2 U$ 	& -1.5, -1.5 	& -1.5, -1.5	& -1.5, -2 		& 1.5, 2		\\
+	    $U_2 U$ 	  & -1.5, -1.5 	& -3, -1.5	  & -1.5, -0.5 	& -1.5, -2		\\
 	    \hline
-	    $U_2 NU$  	& -3, -1.5 		& -3, -3 		& -3, -0.5 		& -3, 2			\\
+	    $U_2 NU$  	& -3, -1.5 		& -3, -3 		  & -3, -0.5 		& -3, -2			\\
 	    \hline
-	    $NU_2 U$  	& -0.5, -1.5 	& -0.5, -0.5 	& -0.5, -3 		& -0.5, -2		\\
+	    $NU_2 U$  	& -0.5, -1.5 	& -3, -0.5 	  & -0.5, -0.5 	& -0.5, -2    \\
 	    \hline
-	    $NU_2 NU$  	& -2, -1.5	 	& -2, -2 		& -2, -1.5 		& -2, -2		\\
+	    $NU_2 NU$  	& -2, -1.5	 	& -2, -3 		 & -2, -0.5 		& -2, -2		  \\
 	    \hline
 	    \end{tabular}
     \end{center}
+    \emph{Note: $NU_i U $ is when player $i$ chooses No Umbrella when it does not rain and chooses Umbrella when it rains}
 
 \end{enumerate}
 \end{solution}
@@ -219,7 +220,7 @@ Let five pirates be $A,B, C, D$ and $E$ and assume a strict order of seniority w
 \begin{solution}
 $A > B > C > D > E$
 \begin{itemize}
-	\item $E$: 100 v
+	\item $E$: (100)
 	\item $D$: (100, 0)
 	\item $C$: (99, 0, 1)
 	\item $B$: (99, 0, 1, 0)
