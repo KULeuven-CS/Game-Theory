@@ -359,19 +359,19 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 	\end{equation}
 	Because $\overline{s}_i$ is strictily dominant the following holds \egtcite{20}:
 	\begin{equation}
-		\forall s_i \in S_i/\{\overline{s}_i\}: \forall s_{\--i} \in S_{\--i} : u_1(\overline{s}_i,s_{\--i}) > u_1(s_i,s_{\--i})
+		\forall s_i \in S_i/\{\overline{s}_i\}: \forall s_{\--i} \in S_{\--i} : u_i(\overline{s}_i,s_{\--i}) > u_i(s_i,s_{\--i})
 	\end{equation}
 	And in particular since $\overline{s}_i \neq s'_i \Rightarrow s'_i \in S_i/\{\overline{s}_i\}$:
 	\begin{equation}
 		\label{eq:uneq2}
-		 u_1(\overline{s}_i,s_{\--i}) > u_1(s'_i,s_{\--i})
+		 u_i(\overline{s}_i,s_{\--i}) > u_i(s'_i,s_{\--i})
 	\end{equation}
 	If we now cominbe \autoref{eq:uneq1} and \autoref{eq:uneq2}:
 	\begin{equation}
-		 u_1(\overline{s}_i,s_{\--i}) > u_1(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})
+		 u_i(\overline{s}_i,s_{\--i}) > u_i(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})
 	\end{equation}
 	This unequality clearly can not hold under the given assumptions.
-	Indeed if instead $s'_i = \overline{s}_i$ \autoref{eq:uneq2} can not be deducted (since $\overline{s}_i$ is exempted from $S_i$) and in that case it's trivial to see that $u_1(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})$ does hold.
+	Indeed if instead $s'_i = \overline{s}_i$ \autoref{eq:uneq2} can not be deducted (since $\overline{s}_i$ is exempted from $S_i$) and in that case it's trivial to see that $u_i(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})$ does hold.
 	By condradiction we proved that if a player has a strictly dominant strategy $\overline{s}_i$ it will always be played in any Nash equilibrium. $\blacksquare$ 
 \end{solution}
 
