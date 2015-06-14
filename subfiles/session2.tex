@@ -80,19 +80,19 @@
 \begin{solution}
 	We will prove $v_i \geq w_i$ using the definitions of maxmin and minmax.
 
-	The defnition of maxmin $w_i$ in symbols is \egtcite{15}:
+	\noindent The definition of maxmin $w_i$ in symbols is \egtcite{15}:
 	\begin{equation}
 		w_i = \max_{s_i} \min_{s_{\--i}} u_i(s_i,s_{\--i}) = u_i(s_{i}^{*},s_{-i}^{*})
 	\end{equation}
-	and where \--i indicates the opposing player. 
+	\noindent and where \--i indicates the opposing player. 
 
 	$$v_i = \min_{s_{\--i}} \max_{s_i} u_i(s_i,s_{\--i})$$
 
-	Following from the definition of $\max_{s_i}$:
+	\noindent Following from the definition of $\max_{s_i}$:
 	$$\max_{s_i} u_i(s_i,s_{\--i}) \geq u_i(s_i^{*}, s_{\--i})$$
-	In particular this also holds for:
+	\noindent In particular this also holds for:
 	$$\max_{s_i} u_i(s_i,s_{\--i}) \geq u_i(s_i^{*},s_{\--i}^{*}) = w_i$$
-	And if the lefthandside is already bigger than $w_i$ so will $v_i$.
+	\noindent And if the left-hand side is already bigger than $w_i$ so will $v_i$.
 \end{solution}
 
 \begin{question}
@@ -156,7 +156,7 @@ equidistant from a seating section, then half the fans in that section will purc
 
 \begin{question}
 	Minimax.\\
-	Consider the following two games. Suppose that player 2 does not really care about her own payoff, but instead wants to minimise the payoff of player 1 (i.e. she plays her minimax strategy). Player 1 wants to maximise her minimum payoff (i.e. she plays her maximin strategy).
+	Consider the following two games. Suppose that player 2 does not really care about her own payoff, but instead wants to minimize the payoff of player 1 (i.e. she plays her minimax strategy). Player 1 wants to maximize her minimum payoff (i.e. she plays her maximin strategy).
 	
 	\begin{center}
 	\begin{tabular}{|l|c|c|r|}
@@ -242,7 +242,7 @@ equidistant from a seating section, then half the fans in that section will purc
 \begin{question}
 	In the Cournot duopoly model of last week, companies only produced at two discrete production levels: high and low. We now model the interaction when companies produce at arbitrary production levels.
 	
-	Model the interaction as a strategic game $(\{1,2\},\{A_1,A_2\},\{u_1,u_2\})$ in which $A_i = [0, +\infty)$ and $a_i \in A_i$ represents how many units of product company $i$ produces. Let the pric that a company receives for each unit be equal to $max\{C - bq, 0\}$, where $q$ is the total units of product on the market and $b > 0$. Further assume that producing a unit of product costs $c_1$ for company one and $c_2$ for company two ($c_1 > 0, c_2 > 0)$.
+	Model the interaction as a strategic game $(\{1,2\},\{A_1,A_2\},\{u_1,u_2\})$ in which $A_i = [0, +\infty)$ and $a_i \in A_i$ represents how many units of product company $i$ produces. Let the price that a company receives for each unit be equal to $max\{C - bq, 0\}$, where $q$ is the total units of product on the market and $b > 0$. Further assume that producing a unit of product costs $c_1$ for company one and $c_2$ for company two ($c_1 > 0, c_2 > 0)$.
 	
 	\begin{enumerate}
 	\item Write down the utility function of each company.
