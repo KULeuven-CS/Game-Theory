@@ -206,7 +206,7 @@ Answer the following questions.
 	\begin{enumerate}
 		\item List the possible actions of each player in this game.
 		\item Describe each player’s preferences over the set of outcomes.
-		\item The game bellow assumes that the traveler regrets paying if there is no check with a cost of $2$ (resulting in $-12$ cost for the traveler in that case):
+		\item The game below assumes that the traveller regrets paying if there is no check with a cost of $2$ (resulting in $-12$ cost for the traveller in that case):
 			\begin{center}
 				\begin{tabular}{|r|c|c|}
 					\hline
@@ -223,7 +223,7 @@ Answer the following questions.
 	\item Nash equilibria
 	\begin{enumerate}
 		\item To find all the Nash Equilibria we first look at the pure strategies.
-			It's clear that there are no pure strategy Nash equilibria. If one should exists there should be a cell for which both players consider that strategy their best response. If we marked the pure strategy best responses ($\underline{underline}$ for traveler, $\overline{overline}$ for railway) we can easiliy show that this is not the case:\\
+			It's clear that there are no pure strategy Nash equilibria. If one should exists there should be a cell for which both players consider that strategy their best response. If we marked the pure strategy best responses ($\underline{underline}$ for traveller, $\overline{overline}$ for railway) we can easily show that this is not the case:\\
 		 \setlength\extrarowheight{1pt}
 		 \begin{center}
 			 \begin{tabular}{|r|c|c|}
@@ -237,9 +237,9 @@ Answer the following questions.
 			 \end{tabular}
 		 \end{center}
 
-		 Let's now look for the mixed strategy Nash equilibibria.
+		 Let's now look for the mixed strategy Nash equilibria.
 		 This means each player will play one of their pure strategies with a certain probablitity.
-		 The probablity used by one player must make all other players indifferent between their pure strategies otherwise they would never use a mixed strategy \egtcite{12}. For an extensive explanation see \cite{mixedstr}. Lets introduce the probabilities $q$ for the rowplayer and $p$ for the column player:
+		 The probability used by one player must make all other players indifferent between their pure strategies otherwise they would never use a mixed strategy \egtcite{12}. For an extensive explanation see \cite{mixedstr}. Lets introduce the probabilities $q$ for the row player and $p$ for the column player:
 
 			\begin{center}
 				\begin{tabular}{|r|c|c|}
@@ -253,7 +253,7 @@ Answer the following questions.
 				\end{tabular}
 			\end{center}
 
-		To determine rowplayer strategy ($q$) we now know that the column player should be indifferent between player $C$ and $NC$ or in symbols:
+		To determine row player strategy ($q$) we now know that the column player should be indifferent between player $C$ and $NC$ or in symbols:
 		$$U_C = U_{NC}$$
 		The expected utilities are dependant on the payoffs of the column player and the probability $q$:
 		$$U_C = 9q + 19 (1-q)$$
@@ -277,7 +277,7 @@ Answer the following questions.
 		Because this equilibrium contains the best responses of all players in all (rational) situations this equilibrium is unique. So the game has only a single Nash Equilibrium. \\(\textit{Is there a better way to verify/prove this?})
 
 
-	\item It would be impossible to derive the Nash Equilibria from the preference relation alone because we clearly used the payoff values to determine the Nash Equilibirum. It would, however, be possible to determine (the non-existance of) \emph{pure} Nash equilibria from the preference relation alone.
+	\item It would be impossible to derive the Nash Equilibria from the preference relation alone because we clearly used the payoff values to determine the Nash Equilibirum. It would, however, be possible to determine (the non-existence of) \emph{pure} Nash equilibria from the preference relation alone.
 	\end{enumerate}
 	
 	\item Determine all Pareto-optimal outcomes.
@@ -313,7 +313,7 @@ Consider the $n$-player game where each player has to name a natural number $x$ 
 	\item In case of a tie, there are no winners (consider only the case $n=2$).
 	\end{enumerate}	
 \end{enumerate}
-Note: Even though the result of 3b might seem obvious, its proof is nontrivial.
+Note: Even though the result of 3b might seem obvious, its proof is non-trivial.
 \end{question}
 
 \begin{solution}
@@ -326,7 +326,7 @@ Note: Even though the result of 3b might seem obvious, its proof is nontrivial.
 \end{solution}
 
 \begin{question}
-Let $\Gamma_N$ and $\Gamma'_N$ be NFGs and let $\Gamma_N$  be identical to $\Gamma'_N$ except for the utility fuction of player $i$, which is the same in both games up to a positive affine transformation.
+Let $\Gamma_N$ and $\Gamma'_N$ be NFGs and let $\Gamma_N$  be identical to $\Gamma'_N$ except for the utility function of player $i$, which is the same in both games up to a positive affine transformation.
 Denote the set of best response strategies of $i$ against strategy profile $s_{\--i}$ by the other players in $\Gamma_N$  as $BR_{\Gamma_N}(s_{\--i})$.
 Argue that $BR_{\Gamma_N}(s_{\--i}) = BR_{\Gamma'_N}(s_{\--i})$ for all possible $s_{\--i}$.
 What does this tell us about strict/weak domination relation between strategies and the set of Nash equilibria in $\Gamma_N$ and $\Gamma'_N$? Are $\Gamma_N$ and $\Gamma'_N$ equal?
@@ -357,7 +357,7 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 		\label{eq:uneq1}
 		u_i(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})
 	\end{equation}
-	Because $\overline{s}_i$ is strictily dominant the following holds \egtcite{20}:
+	Because $\overline{s}_i$ is strictly dominant the following holds \egtcite{20}:
 	\begin{equation}
 		\forall s_i \in S_i/\{\overline{s}_i\}: \forall s_{\--i} \in S_{\--i} : u_i(\overline{s}_i,s_{\--i}) > u_i(s_i,s_{\--i})
 	\end{equation}
@@ -366,13 +366,13 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 		\label{eq:uneq2}
 		 u_i(\overline{s}_i,s_{\--i}) > u_i(s'_i,s_{\--i})
 	\end{equation}
-	If we now cominbe \autoref{eq:uneq1} and \autoref{eq:uneq2}:
+	If we now combine \autoref{eq:uneq1} and \autoref{eq:uneq2}:
 	\begin{equation}
 		 u_i(\overline{s}_i,s_{\--i}) > u_i(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})
 	\end{equation}
-	This unequality clearly can not hold under the given assumptions.
+	This inequality clearly can not hold under the given assumptions.
 	Indeed if instead $s'_i = \overline{s}_i$ \autoref{eq:uneq2} can not be deducted (since $\overline{s}_i$ is exempted from $S_i$) and in that case it's trivial to see that $u_i(s'_i,s_{\--i}) \geq u_i(\overline{s}_i,s_{\--i})$ does hold.
-	By condradiction we proved that if a player has a strictly dominant strategy $\overline{s}_i$ it will always be played in any Nash equilibrium. $\blacksquare$ 
+	By contradiction we proved that if a player has a strictly dominant strategy $\overline{s}_i$ it will always be played in any Nash equilibrium. $\blacksquare$ 
 \end{solution}
 
 \begin{question}
@@ -451,7 +451,7 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 \begin{question}
 	Guessing right
 
-	Player 1 and 2 each choose a member of the set $\{1,\ldots,K\}$. If the players choose the same number then player 2 pays \$1 to player 1; otherwise no payement is made. Each player maximizes his expected monetary payoff. Formulate this situation as a strategic game and find its Nash equilibria.
+	Player 1 and 2 each choose a member of the set $\{1,\ldots,K\}$. If the players choose the same number then player 2 pays \$1 to player 1; otherwise no payment is made. Each player maximizes his expected monetary payoff. Formulate this situation as a strategic game and find its Nash equilibria.
 \end{question}
 
 \begin{solution}
