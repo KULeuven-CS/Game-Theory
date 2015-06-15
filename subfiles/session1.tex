@@ -415,7 +415,7 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 	\begin{align}
 		u_i(\overline{s}_i, s_{\--i}) &= \sum\limits_{j=1}^{|A_i|} u_i(a_j, s_{\--i}) \overline{s}_i(a_j) & \forall s_{\--i} \in S_{\--i}\\
 		\overline{s}_i(a_j) &\geq 0 & 1 \leq j \leq |A_i| \\
-		\sum\limits_{j=1}^{|A_i|} s_i(a_j) &= 1
+		\sum\limits_{j=1}^{|A_i|} \overline{s}_i(a_j) &= 1
 	\end{align}
 	
 	Because $\overline{s}_i$ is strictly dominant, the following holds \egtcite{20}:
@@ -434,7 +434,7 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 		\sum_{i=1}^{n} w(x_i) x_i \leq \sum_{i=1}^{n} w(x_i) x_{max} = x_{max} \sum_{i=1}^{n} w(x_i) = x_{max}
 	\end{equation}
 	
-	Let $s'_{\--i} \in S_{\--i}$. Note that $u_i(\overline{s}_i, s'_{\--i})$ is a convex combination of the utilities of player $i$'s pure strategies $a_j$ with weights $\overline{s}_i(a_j)$. Let $a^* = \max_{a_j}(u_i(a_j, s'_{\--i}))$ be the pure strategy which gives the largest utility for player $i$ when the others play $s'_{\--i}$. Then $a^*$'s utility is an upper bound for $\overline{s}_i$'s expected utility:
+	Let $s'_{\--i} \in S_{\--i}$. Note that $u_i(\overline{s}_i, s'_{\--i})$ is a convex combination of the utilities of player $i$'s pure strategies $a_j$ with weights $\overline{s}_i(a_j)$. Let $a^* = \text{arg}\max_{a_j}(u_i(a_j, s'_{\--i}))$ be the pure strategy which gives the largest utility for player $i$ when the others play $s'_{\--i}$. Then $a^*$'s utility is an upper bound for $\overline{s}_i$'s expected utility:
 	\begin{align}
 	\label{eq:q1-9:convex-bound}
 		u_i(a^*, s'_{\--i}) &\geq u_i(\overline{s}_i, s'_{\--i})
