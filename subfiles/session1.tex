@@ -410,11 +410,11 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 	We will prove this statement by contraction.
 	Let $\overline{s}_i$ be a mixed strategy for player $i$ where $|support(\overline{s}_i)| \geq 2$. (If the support only contains one action, the mixed strategy trivially reduces to a pure strategy.)
 	Let $A_i = \{a_{1}, a_{2}, \dots a_{j}\}$ be the action set of player $i$, or equivalently his set of pure strategies.
-	Let $s_i(a_j)$ be the probability that player $i$ plays action $a_j$ in his mixed strategy.
+	Let $\overline{s}_i(a_j)$ be the probability that player $i$ plays action $a_j$ in his mixed strategy.
 	The expected utility of $\overline{s}_i$ is:
 	\begin{align}
-		u_i(\overline{s}_i, s_{\--i}) &= \sum\limits_{j=1}^{|A_i|} u_i(a_j, s_{\--i}) s_i(a_j) & \forall s_{\--i} \in S_{\--i}\\
-		s_i(a_j) &\geq 0 & 1 \leq j \leq |A_i| \\
+		u_i(\overline{s}_i, s_{\--i}) &= \sum\limits_{j=1}^{|A_i|} u_i(a_j, s_{\--i}) \overline{s}_i(a_j) & \forall s_{\--i} \in S_{\--i}\\
+		\overline{s}_i(a_j) &\geq 0 & 1 \leq j \leq |A_i| \\
 		\sum\limits_{j=1}^{|A_i|} s_i(a_j) &= 1
 	\end{align}
 	
@@ -434,7 +434,7 @@ The set of positive affine transformations of utility function $u_i(s)$ consists
 		\sum_{i=1}^{n} w(x_i) x_i \leq \sum_{i=1}^{n} w(x_i) x_{max} = x_{max} \sum_{i=1}^{n} w(x_i) = x_{max}
 	\end{equation}
 	
-	Let $s'_{\--i} \in S_{\--i}$. Note that $u_i(\overline{s}_i, s'_{\--i})$ is a convex combination of the utilities of player $i$'s pure strategies $a_j$. Let $a^* = \max_{a_j}(u_i(a_j, s'_{\--i}))$ be the pure strategy which gives the largest utility for player $i$ when the others play $s'_{\--i}$. Then $a^*$'s utility is an upper bound for $\overline{s}_i$'s expected utility:
+	Let $s'_{\--i} \in S_{\--i}$. Note that $u_i(\overline{s}_i, s'_{\--i})$ is a convex combination of the utilities of player $i$'s pure strategies $a_j$ with weights $\overline{s}_i(a_j)$. Let $a^* = \max_{a_j}(u_i(a_j, s'_{\--i}))$ be the pure strategy which gives the largest utility for player $i$ when the others play $s'_{\--i}$. Then $a^*$'s utility is an upper bound for $\overline{s}_i$'s expected utility:
 	\begin{align}
 	\label{eq:q1-9:convex-bound}
 		u_i(a^*, s'_{\--i}) &\geq u_i(\overline{s}_i, s'_{\--i})
