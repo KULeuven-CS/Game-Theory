@@ -10,9 +10,27 @@
 \end{question}
 
 \begin{solution} 
+The following is the corresponding matrix with the best responses marked ($\underline{underline}$ for row player, $\overline{overline}$ for column player): 
+	\begin{center}
+	    \begin{tabular}{|l|c|c|}
+	    \hline
+		& $Trust$ & $Distrust$ \\
+		\hline
+		$(Not Play,Steal)$ & $(1,\overline{1})$ & $(\underline{1},\overline{1})$ \\
+		\hline
+		$(Not Play,Share)$ & $(1,\overline{1})$ & $(\underline{1},\overline{1})$ \\
+		\hline
+		$(Play,Steal)$ & $(\underline{10},0)$ & $(0,\overline{2})$ \\
+		\hline
+		$(Play,Share)$ & $(5,\overline{5})$ & $(0,2)$ \\
+		\hline
+	    \end{tabular}
+    \end{center}
 \begin{itemize}
-	\item Subgame perfect: $[(Not Play, Steal),(Distrust)]$
-	\item Non subgame perfect: $[(Not Play, Share),(Distrust)]$
+	\item General Nash equilibria consist of best responses for both players. So if a payoff vector has been both underlined and overlined it's an NE. With this we find:\\
+$\{\Big((Not Play, Share),(Distrust)\Big),\Big((Not Play, Steal),(Distrust)\Big)\}$
+%TODO: verify
+	\item Next we have to look at Subgame perfect NEs: $[(Not Play, Steal),(Distrust)]$
 \end{itemize}
 \end{solution}
 
