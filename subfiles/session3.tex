@@ -12,23 +12,27 @@
 \begin{solution} 
 The following is the corresponding matrix with the best responses marked ($\underline{underline}$ for row player, $\overline{overline}$ for column player): 
 	\begin{center}
-	    \begin{tabular}{|l|c|c|}
+		\setlength\extrarowheight{1pt}
+	    \begin{tabular}{|l|c|c|c|c|}
 	    \hline
-		& $Trust$ & $Distrust$ \\
+		& $(Trust,Trust)$ & $(Distrust,Trust)$ & $(Trust,Distrust)$ & $(Distrust,Distrust)$\\
 		\hline
-		$(Not Play,Steal)$ & $(1,\overline{1})$ & $(\underline{1},\overline{1})$ \\
+		$(Not Play,Steal)$ & $(1,\overline{1})$ & $(1,\overline{1})$ & \textcolor{blue}{$(\underline{1},\overline{1})$} & \textcolor{blue}{$(\underline{1},\overline{1})$} \\
 		\hline
-		$(Not Play,Share)$ & $(1,\overline{1})$ & $(\underline{1},\overline{1})$ \\
+		$(Not Play,Share)$ & $(1,\overline{1})$ & $(1,\overline{1})$ & \textcolor{blue}{$(\underline{1},\overline{1})$} & \textcolor{blue}{$(\underline{1},\overline{1})$} \\
 		\hline
-		$(Play,Steal)$ & $(\underline{10},0)$ & $(0,\overline{2})$ \\
+		$(Play,Steal)$ & $(\underline{10},0)$ & $(\underline{10},0)$ & $(0,\overline{2})$ & $(0,\overline{2})$ \\
 		\hline
-		$(Play,Share)$ & $(5,\overline{5})$ & $(0,2)$ \\
+		$(Play,Share)$ & $(5,\overline{5})$ & $(5,\overline{5})$ & $(0,2)$ & $(0,2)$ \\
 		\hline
 	    \end{tabular}
     \end{center}
 \begin{itemize}
-	\item General Nash equilibria consist of best responses for both players. So if a payoff vector has been both underlined and overlined it's an NE. With this we find:\\
-$\{\Big((Not Play, Share),(Distrust)\Big),\Big((Not Play, Steal),(Distrust)\Big)\}$
+	\item General Nash equilibria consist of best responses for both players. So if a payoff vector has been both underlined and overlined it's an NE. With this we find:
+	$$\{\Big((Not Play, Share),(Trust,Distrust)\Big),$$
+	$$\Big((Not Play, Steal),(Trust,Distrust)\Big),$$
+	$$\Big((Not Play, Share),(Distrust,Distrust)\Big),$$
+	$$\Big((Not Play, Steal),(Distrust,Distrust)\Big)\}$$
 %TODO: verify
 	\item Next we have to look at Subgame perfect NEs: $[(Not Play, Steal),(Distrust)]$
 \end{itemize}
