@@ -7,6 +7,7 @@
 
     \centering
     \includegraphics[width=0.4\textwidth]{Question3-1.png}
+	%TODO: tikzify for more awesomeness
 \end{question}
 
 \begin{solution} 
@@ -14,7 +15,6 @@ Let's start by creating the induced normal form matrix of this game.
 There are two decision nodes for player one so to find all the pure strategies we have to use the cartesian product of the options in the two nodes. This results in the four rows.
 Because there is only one decision node for player 2 only two columns are needed.
 Below is the corresponding matrix with the best responses marked ($\underline{underline}$ for row player, $\overline{overline}$ for column player): 
-%TODO: Maybe not needed to explicitly list 4 P2 strategies. Cartesian product of decision nodes. But there is only ONE decision node (right)!! So cartesian product results in only two options.
 \begin{center}
 	\setlength\extrarowheight{1pt} %extra row height for overline
 	\begin{tabular}{|l|c|c|}
@@ -34,23 +34,21 @@ Below is the corresponding matrix with the best responses marked ($\underline{un
 \begin{itemize}
 	\item General Nash equilibria consist of best responses for both players. So if a payoff vector has been both underlined for player one and overlined for player two it's an Nash Equilibrium. This gives us the following \textcolor{blue}{Nash equilibria}: 
 	$$\{\Big((Not Play, Steal),Distrust)\Big),\Big((Not Play, Share),(Distrust)\Big)\}$$
-%TODO: verify
-	%Subgame perfect equi should also be a Nash equi!!!
 	\item Next we have to look at Subgame Perfect NEs (SPNEs).
 		If a profile is a SPNE it is also a Nash Equilibrium ($P \in SPNE \rightarrow P \in NE$).
 		Because of this, non-Nash Equilibria profiles can never be SPNE ($P \notin NE \rightarrow P \notin SPNE$). Thanks to this property we can only consider the NEs we found and check whether any of them are also SPNEs.
 		Let us now look at the two NEs we found.\\
 		\textcolor{blue}{$\mathbf{\Big((Not Play, Steal),Distrust)\Big)$}}:\\
-		If we consider the second node of player one as subgame we see that $Steal$ is the best option here so there is no profitable deviation for this subgame ($10>5$).
+		If we consider the second node of player one as subgame we see that $Steal$ is the best option here so there is no profitable deviation from restriction $Steal$ for this subgame ($10>5$).
 		Next we consider the decision node of player two and below as a subgame.
 		Again none of the players can deviate to increase their profit.
-		If player two choses $Trust$ (instead of restriction $Distrust$) it will result in a zero payoff ($0<2$).
-		And we already considered the options of player one in the smaller subgame.
+		If player two choses $Trust$ (instead of restriction $Distrust$) it will result in a zero payoff which is lower than the payoff received under the restriction ($0<2$).
+		We already considered the options of player one in the left branch of this subgame and found no profitable deviations there.
 		The last subgame is the whole game and we already know the outcome here.
-		Because we found no profitable deviation, this profile is a \textbf{Subgame Perfect Nash Equilibrium}.
+		Because we found no profitable deviation in any of the subgames, this profile is a \textbf{Subgame Perfect Nash Equilibrium}.
 		\textcolor{blue}{$\Big((Not Play, Share),Distrust)\Big)$}:\\
-		If we consider the second node of player one as subgame we see that $Steal$ is the best option here for player one ($10>5$).
-		This means there IS a profitable deviation in some subgame so this strategy profile can NOT be a Subgame Perfect Nash Equilibrium. 
+		If we consider the second node of player one as subgame we see that $Steal$ (instead of restriction $Share$) is the best option here for player one ($10>5$).
+		This means there \emph{is} a profitable deviation in some subgame so this strategy profile can NOT be a Subgame Perfect Nash Equilibrium. 
 		No further analysis is necessary because one counter example is sufficient.
 \end{itemize}
 \end{solution}
