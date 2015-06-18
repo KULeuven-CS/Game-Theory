@@ -10,30 +10,32 @@
 \end{question}
 
 \begin{solution} 
-The following is the corresponding matrix with the best responses marked ($\underline{underline}$ for row player, $\overline{overline}$ for column player): 
-	\begin{center}
-		\setlength\extrarowheight{1pt}
-	    \begin{tabular}{|l|c|c|c|c|}
-	    \hline
-		& $(Trust,Trust)$ & $(Distrust,Trust)$ & $(Trust,Distrust)$ & $(Distrust,Distrust)$\\
+Let's start by creating the induced normal form matrix of this game. 
+There are two decision nodes for player one so to find all the pure strategies we have to use the cartesian product of the options in the two nodes. This results in the four rows.
+Because there is only one decision node for player 2 only two columns are needed.
+Below is the corresponding matrix with the best responses marked ($\underline{underline}$ for row player, $\overline{overline}$ for column player): 
+%TODO: Maybe not needed to explicitly list 4 P2 strategies. Cartesian product of decision nodes. But there is only ONE decision node (right)!! So cartesian product results in only two options.
+\begin{center}
+	\setlength\extrarowheight{1pt} %extra row height for overline
+	\begin{tabular}{|l|c|c|}
 		\hline
-		$(Not Play,Steal)$ & $(1,\overline{1})$ & $(1,\overline{1})$ & \textcolor{blue}{$(\underline{1},\overline{1})$} & \textcolor{blue}{$(\underline{1},\overline{1})$} \\
+		& $Trust$ & $Distrust$ \\
 		\hline
-		$(Not Play,Share)$ & $(1,\overline{1})$ & $(1,\overline{1})$ & \textcolor{blue}{$(\underline{1},\overline{1})$} & \textcolor{blue}{$(\underline{1},\overline{1})$} \\
+		$(Not Play,Steal)$ & $(1,\overline{1})$ & \textcolor{blue}{$(\underline{1},\overline{1})$} \\
 		\hline
-		$(Play,Steal)$ & $(\underline{10},0)$ & $(\underline{10},0)$ & $(0,\overline{2})$ & $(0,\overline{2})$ \\
+		$(Not Play,Share)$ & $(1,\overline{1})$ & \textcolor{blue}{$(\underline{1},\overline{1})$} \\
 		\hline
-		$(Play,Share)$ & $(5,\overline{5})$ & $(5,\overline{5})$ & $(0,2)$ & $(0,2)$ \\
+		$(Play,Steal)$ & $(\underline{10},0)$ & $(0,\overline{2})$ \\
 		\hline
-	    \end{tabular}
-    \end{center}
+		$(Play,Share)$ & $(5,\overline{5})$ & $(0,2)$ \\
+		\hline
+	\end{tabular}
+\end{center}
 \begin{itemize}
-	\item General Nash equilibria consist of best responses for both players. So if a payoff vector has been both underlined and overlined it's an NE. With this we find:
-	$$\{\Big((Not Play, Share),(Trust,Distrust)\Big),$$
-	$$\Big((Not Play, Steal),(Trust,Distrust)\Big),$$
-	$$\Big((Not Play, Share),(Distrust,Distrust)\Big),$$
-	$$\Big((Not Play, Steal),(Distrust,Distrust)\Big)\}$$
+	\item General Nash equilibria consist of best responses for both players. So if a payoff vector has been both underlined for player one and overlined for player two it's an Nash Equilibrium. This gives us the following Nash equilibria: 
+	$$\{\Big((Not Play, Steal),Distrust)\Big),\Big((Not Play, Share),(Distrust)\Big)\}$$
 %TODO: verify
+	%Subgame perfect equi should also be a Nash equi!!!
 	\item Next we have to look at Subgame perfect NEs: $[(Not Play, Steal),(Distrust)]$
 \end{itemize}
 \end{solution}
