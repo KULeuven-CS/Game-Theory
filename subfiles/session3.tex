@@ -36,7 +36,8 @@ Below is the corresponding matrix with the best responses marked ($\underline{un
 	\item Next we have to look at Subgame Perfect NEs (SPNEs).
 		If a profile is a SPNE it is also a Nash Equilibrium ($P \in SPNE \rightarrow P \in NE$).
 		Because of this, non-Nash Equilibria profiles can never be SPNE ($P \notin NE \rightarrow P \notin SPNE$). Thanks to this property we can only consider the NEs we found and check whether any of them are also SPNEs.
-		Let us now look at the two NEs we found.\\
+		Let us now look at the two NEs we found.
+
 		\textcolor{blue}{$\mathbf{\Big((Not Play, Steal),Distrust)\Big)}$}:\\
 		If we consider the second node of player one as subgame we see that $Steal$ is the best option here so there is no profitable deviation from restriction $Steal$ for this subgame ($10>5$).
 		Next we consider the decision node of player two and below as a subgame.
@@ -45,6 +46,7 @@ Below is the corresponding matrix with the best responses marked ($\underline{un
 		We already considered the options of player one in the left branch of this subgame and found no profitable deviations there.
 		The last subgame is the whole game and we already know the outcome here.
 		Because we found no profitable deviation in any of the subgames, this profile is a \textbf{Subgame Perfect Nash Equilibrium}.
+
 		\textcolor{blue}{$\Big((Not Play, Share),Distrust)\Big)$}:\\
 		If we consider the second node of player one as subgame we see that $Steal$ (instead of restriction $Share$) is the best option here for player one ($10>5$).
 		This means there \emph{is} a profitable deviation in some subgame so this strategy profile can NOT be a Subgame Perfect Nash Equilibrium. 
@@ -57,7 +59,11 @@ In a game where player $i$ has $N$ information sets indexed $n = 1, ..., N$ and 
 \end{question}
 
 \begin{solution}
-$\prod\limits_{n=1}^N M_n$
+	From the definition of pure strategies for imperfect information games \egtcite{52} we know that a pure strategie is composed of the $N$ choices made at each information set.
+	Since information set $n$ has $M_n$ options we have to multiply all options by eachother to find the amount of all possible pure strategies.
+	This gives us
+$$\prod\limits_{n=1}^N M_n$$
+as solution. 
 \end{solution}
 
 \begin{question}[Rain]
@@ -72,16 +78,16 @@ Players 1 and 2 must decide whether or not to carry an umbrella when leaving hom
 \begin{enumerate}
 \item Game tree:
 \begin{center}
+% macro for entering payoffs
+\newcommand\payoff[1]{
+  \begin{pmatrix} #1 \end{pmatrix}
+}
 \tikzset{
   % Two node styles for game trees: solid and hollow
   solid node/.style={circle,draw,inner sep=1.2,fill=black},
   hollow node/.style={circle,draw,inner sep=1.2},
 }
 
-% macro for entering payoffs
-\newcommand\payoff[1]{
-  $\begin{pmatrix} #1 \end{pmatrix}$
-}
 
 \begin{tikzpicture}[font=\footnotesize]
   \tikzset{
@@ -93,70 +99,74 @@ Players 1 and 2 must decide whether or not to carry an umbrella when leaving hom
   \node[solid node,label=above:{N}]{}
   	child{node(r1)[solid node,label=left:{1}]{}
 		child{node(rU)[solid node,label=left:{2}]{}
-        		child{node[solid node,label=below:{\payoff{-2\\-2}}]{}
-        			edge from parent node[left]{U}
+        		child{node[solid node,label=below:{$\payoff{-2\\-2}$}]{}
+					edge from parent[red] node[left]{\textcolor{red}{U}}
         		}
-            child{node[solid node,label=below:{\payoff{-2\\-5}}]{}
-              edge from parent node[right]{NU}
+            child{node[solid node,label=below:{$\payoff{-2\\-5}$}]{}
+				edge from parent[black] node[right]{\textcolor{red}{NU}}
             }
-      		edge from parent node[left]{U}
+			edge from parent node[left]{\textcolor{red}{U}}
       	}
       	child{node(rNU)[solid node,label=left:{2}]{}
-            child{node[solid node,label=below:{\payoff{-5\\-2}}]{}
-              edge from parent node[left]{U}
+            child{node[solid node,label=below:{$\payoff{-5\\-2}$}]{}
+				edge from parent node[left]{\textcolor{red}{U}}
             }
-            child{node[solid node,label=below:{\payoff{-5\\-5}}]{}
-              edge from parent node[right]{NU}
+            child{node[solid node,label=below:{$\payoff{-5\\-5}$}]{}
+				edge from parent node[right]{\textcolor{red}{NU}}
             }
-          edge from parent node[right]{NU}
+			edge from parent[black] node[right]{\textcolor{red}{NU}}
         }
-      	edge from parent node[left]{Rain (0.5)}
+		edge from parent[red] node[left]{Rain (0.5)}
 	}
 	child{node(s1)[solid node,label=left:{1}]{}
     child{node(sU)[solid node,label=left:{2}]{}
-            child{node[solid node,label=below:{\payoff{-1\\-1}}]{}
-              edge from parent node[left]{U}
+            child{node[solid node,label=below:{$\payoff{-1\\-1}$}]{}
+				edge from parent node[left]{\textcolor{blue}{U}}
             }
-            child{node[solid node,label=below:{\payoff{-1\\1}}]{}
-              edge from parent node[right]{NU}
+            child{node[solid node,label=below:{$\payoff{-1\\1}$}]{}
+				edge from parent node[right]{\textcolor{blue}{NU}}
             }
-          edge from parent node[left]{U}
+			edge from parent[black] node[left]{\textcolor{blue}{U}}
         }
         child{node(sNU)[solid node,label=left:{2}]{}
-            child{node[solid node,label=below:{\payoff{1\\-1}}]{}
-              edge from parent node[left]{U}
+            child{node[solid node,label=below:{$\payoff{1\\-1}$}]{}
+				edge from parent[black] node[left]{\textcolor{blue}{U}}
             }
-            child{node[solid node,label=below:{\payoff{1\\1}}]{}
-              edge from parent node[right]{NU}
+            child{node[solid node,label=below:{$\payoff{1\\1}$}]{}
+				edge from parent[blue] node[right]{\textcolor{blue}{NU}}
             }
-          edge from parent node[right]{NU}
+			edge from parent node[right]{\textcolor{blue}{NU}}
         }
-        edge from parent node[right]{Sunny (0.5)}
+		edge from parent[blue] node[right]{Sunny (0.5)}
   };
 
   \draw[bend left=15,-, dashed]  (rU) to node [auto] {} (sU);
   \draw[bend left=15,-, dashed]  (rNU) to node [auto] {} (sNU);
 \end{tikzpicture}
 \end{center}
-
+Note that only the colored outer branches will ever be played if we assume that both players know the rules of the game and they are both playing rationally.
+Player one simply looks at the weather to make her decision and player two can base her decision on the decision of the former.
 \item Normal form game:
 \begin{center}
 	    \begin{tabular}{|l|c|c|c|c|}
 	    \hline
-	    			      & $U_1 U$ 		& $U_1 NU$ 		& $NU_1 U$ 		& $NU_1 NU$ 	\\
+		& $\textcolor{blue}{U_1}\textcolor{red}{U}$ 		& $\textcolor{blue}{U_1}\textcolor{red}{NU}$ 		& $\textcolor{blue}{NU_1}\textcolor{red}{U}$ 		& $\textcolor{blue}{NU_1}\textcolor{red}{NU}$ 	\\
 	    \hline
-	    $U_2 U$ 	  & -1.5, -1.5 	& -3, -1.5	  & -1.5, -0.5 	& -1.5, -2		\\
+		$\textcolor{blue}{U_2}\textcolor{red}{U}$ 	  & (-1.5, -1.5) 	& (-3, -1.5)	  & (-1.5, -0.5) 	& \textbf{(-1.5, -2)}		\\
 	    \hline
-	    $U_2 NU$  	& -3, -1.5 		& -3, -3 		  & -3, -0.5 		& -3, -2			\\
+		$\textcolor{blue}{U_2}\textcolor{red}{NU}$  	& (-3, -1.5) 		& (-3, -3)		  & (-3, -0.5) 		& (-3, -2)			\\
 	    \hline
-	    $NU_2 U$  	& -0.5, -1.5 	& -3, -0.5 	  & -0.5, -0.5 	& -0.5, -2    \\
+		$\textcolor{blue}{NU_2}\textcolor{red}{U}$  	& (-0.5, -1.5) 	& (-3, -0.5) 	  & (-0.5, -0.5) 	& -(0.5, -2)    \\
 	    \hline
-	    $NU_2 NU$  	& -2, -1.5	 	& -2, -3 		 & -2, -0.5 		& -2, -2		  \\
+		$\textcolor{blue}{NU_2}\textcolor{red}{NU}$  	& (-2, -1.5)	 	& (-2, -3) 		 & (-2, -0.5) 		& (-2, -2)		  \\
 	    \hline
 	    \end{tabular}
     \end{center}
-    \emph{Note: $NU_i U $ is when player $i$ chooses No Umbrella when it does not rain and chooses Umbrella when it rains}
-
+    Note: $NU_i U $ is when player $i$ chooses No Umbrella when it does not rain and chooses Umbrella when it rains.
+	The (expected) payoffs shown in the induced normal form game are calculated analogously to the example calculation of the \textbf{top right payoff} below:
+	\[
+		\begin{pmatrix}U_2U\\NU_1NU\end{pmatrix} = \overbracket{0.5}^{\textcolor{red}{P(rain)}} \underbrace{\begin{pmatrix}-2\\-5\end{pmatrix}}_{\textcolor{red}{(U,NU)}} + \overbracket{0.5}^{\textcolor{blue}{P(sun)}} \underbrace{\begin{pmatrix}-1\\1\end{pmatrix}}_{\textcolor{blue}{(U,NU)}} = \begin{pmatrix}-1.5 \\ -2 \end{pmatrix} = \textbf{\text{(-1.5, -2)}}^T
+	\]
 \end{enumerate}
 \end{solution}
 
