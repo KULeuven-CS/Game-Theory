@@ -1,19 +1,33 @@
-\documentclass[a4paper, 11pt, oneside]{article}
+\documentclass[a4paper, 10pt, oneside]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[hidelinks]{hyperref}
-\usepackage[tmargin=3cm, bmargin=2cm, lmargin=2cm, rmargin=2cm]{geometry}
-\usepackage{amsmath,amsthm,amsfonts,amssymb}
+
+\usepackage[a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    outer=3cm,
+    inner=3cm,
+    heightrounded]{geometry}
+
+\usepackage[activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true]{microtype}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[hyperref]{ntheorem}
 \usepackage{subfiles}
 \usepackage[table]{xcolor}
 \usepackage{eurosym}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath}
-\usepackage{eurosym}
 \usepackage[backend=bibtex,style=ieee]{biblatex}
 \usepackage{enumerate}
+\usepackage{csquotes}
+\usepackage[colorlinks]{hyperref}
 \bibliography{main}
 
 \graphicspath{{images/}{../images/}}
@@ -21,14 +35,18 @@
 \title{Game Theory}
 \date{\today}
 %Surnames in alphabetical order
-\author{Mattias Buelens \\ Tom Broens \\ Dieter Castel \\ Jonas Devlieghere \\ Dennis Frett \\ Ben Lefevere \\ Stefan Pante \\ Wout Scheepers }
+\author{Mattias Buelens \and Tom Broens \and Dieter Castel \and Jonas
+Devlieghere \and Dennis Frett \and Ben Lefevere \and Stefan Pante \and Wout Scheepers}
+
+% Q&A Style
+\theoremstyle{plain}
+\theorembodyfont{\normalfont}
 
 % Questions
 \newtheorem{question}{Question}
 \numberwithin{question}{section}
 
 % Solutions
-\theoremstyle{definition}
 \newtheorem{solution}{Solution}
 \numberwithin{solution}{section}
 
@@ -40,10 +58,9 @@
 
 % Title page
 \maketitle
-\newpage
 
-% Table of Contents
 \tableofcontents
+
 \newpage
 
 % Subfiles
